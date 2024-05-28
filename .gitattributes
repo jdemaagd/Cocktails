@@ -1,0 +1,22 @@
+# THIS IS ONLY FOR THE gitattributes REPOSITORY.
+# Handle line endings automatically for files detected as text
+# and leave all files detected as binary untouched.
+
+# normalizes all line endings to LF when checking files into your repo.
+* text=auto
+
+# Windows -> crlf (two characters - eol)
+# Unix -> lf (single character - eol)
+# https://www.aleksandrhovhannisyan.com/blog/crlf-vs-lf-normalizing-line-endings-in-git/
+
+**/testData/** linguist-vendored
+*Generated.java linguist-generated=true
+*.kt.txt linguist-language=Kotlin
+
+* eol=lf
+*.png binary
+*.jar binary
+compiler/cli/bin/* eol=lf
+compiler/cli/bin/*.bat eol=crlf
+gradlew.bat eol=crlf
+compiler/testData/** eol=auto
