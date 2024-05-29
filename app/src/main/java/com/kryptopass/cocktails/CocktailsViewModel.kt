@@ -19,7 +19,6 @@ class CocktailsViewModel(
     private val factory: CocktailsGameFactory,
     private val dispatcher: CoroutineDispatcher = IO
 ) : ViewModel() {
-
     private val _question = MutableStateFlow<Question?>(null)
     val question: StateFlow<Question?>
         get() = _question

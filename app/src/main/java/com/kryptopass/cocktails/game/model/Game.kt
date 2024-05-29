@@ -4,7 +4,6 @@ class Game(
     private val questions: List<Question>,
     val score: Score = Score(0)
 ) {
-
     private var questionIndex = -1
 
     fun nextQuestion(): Question? {
@@ -22,4 +21,3 @@ class Game(
         }
     }
 }
-

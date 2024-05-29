@@ -53,9 +53,9 @@ class GameUnitTests {
         Assert.assertEquals(score.current, 0)
     }
 
-    fun createQuestion(answerReturn: Boolean): Question {
+    private fun createQuestion(answerReturn: Boolean): Question {
         return object : Question("", "") {
-            override fun answer(answer: String): Boolean {
+            override fun answer(option: String): Boolean {
                 return answerReturn
             }
         }

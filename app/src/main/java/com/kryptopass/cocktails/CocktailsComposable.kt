@@ -28,7 +28,6 @@ fun CocktailsScreen(
     repository: CocktailsRepository,
     gameFactory: CocktailsGameFactory
 ) {
-
     val cocktailsViewModel = viewModel<CocktailsViewModel>(
         factory = CocktailsViewModelFactory(
             repository = repository,
@@ -49,7 +48,6 @@ fun CocktailsScreen(
         }
     }
 
-
     LaunchedEffect(Unit) {
         cocktailsViewModel.initGame()
     }
@@ -67,7 +65,6 @@ fun CocktailsScreen(
             }
         }
     )
-
 }
 
 @Composable
@@ -80,7 +77,6 @@ fun CocktailsComposable(
     answerQuestion: (answer: String) -> Unit,
     modifier: Modifier = Modifier
 ) {
-
     Column(
         modifier.fillMaxWidth()
     ) {
@@ -143,15 +139,12 @@ fun CocktailsComposable(
                 )
             }
         }
-
     }
-
 }
-
 
 @Preview
 @Composable
-fun ContailsComposablePreview() {
+fun CocktailsComposablePreview() {
     CocktailsTheme {
         // A surface container using the 'background' color from the theme
         Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {

@@ -10,6 +10,7 @@ datastorePreferences = "1.1.1"
 junit = "4.13.2"
 kotlin = "1.9.23"
 kotlinxCoroutinesTest = "1.8.0"
+ktlint = "11.1.0"
 lifecycleRuntimeKtx = "2.8.0"
 loggingInterceptor = "4.12.0"
 okhttp = "4.12.0"
@@ -42,3 +43,4 @@ sandwich-retrofit = { module = "com.github.skydoves:sandwich-retrofit", version.
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
