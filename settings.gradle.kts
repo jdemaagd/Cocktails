@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Cocktails"
 include(":app")
- 
+include(":rally")
