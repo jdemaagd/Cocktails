@@ -6,6 +6,8 @@ import androidx.compose.ui.test.hasParent
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithContentDescription
+import androidx.compose.ui.test.onRoot
+import androidx.compose.ui.test.printToLog
 import com.kryptopass.rally.ui.components.RallyTopAppBar
 import org.junit.Rule
 import org.junit.Test
@@ -43,6 +45,9 @@ class TopAppBarTest {
                 currentScreen = RallyScreen.Accounts
             )
         }
+
+        // composeTestRule.onRoot().printToLog("CURRENT LABEL EXISTS")
+        composeTestRule.onRoot(useUnmergedTree = true).printToLog("CURRENT LABEL EXISTS")
 
         composeTestRule
             .onNode(

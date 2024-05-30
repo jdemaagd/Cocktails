@@ -111,6 +111,7 @@ private fun AlertCard() {
             repeatMode = RepeatMode.Reverse
         ), label = ""
     )
+
     Card(elevation = CardDefaults.elevatedCardElevation(animatedElevation)) {
         Column {
             AlertHeader {
