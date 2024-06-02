@@ -12,6 +12,10 @@
 - MainActivity: an activity is tied to app lifecycle and Android subsystem
 - CocktailsApplication.kt: an app class has many dependencies on Android subsystem
 
+## Tasks
+
+- `todo:dataBindingMergeDependencyArtifactsDebug`
+
 ## Resources
 
 - [Testing Docs](https://developer.android.com/develop/ui/compose/testing#matchers)

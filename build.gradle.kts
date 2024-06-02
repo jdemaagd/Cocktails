@@ -12,7 +12,10 @@ buildscript {
 plugins {
     alias(libs.plugins.androidApplication) apply false
     alias(libs.plugins.jetbrainsKotlinAndroid) apply false
+    alias(libs.plugins.daggerHilt) apply false
+    alias(libs.plugins.devtoolsKsp) apply false
     alias(libs.plugins.ktlint) apply false
+    alias(libs.plugins.navSafeArgs) apply false
     alias(libs.plugins.spotless) apply false
 }
 

@@ -5,6 +5,8 @@ pluginManagement {
     gradlePluginPortal()
   }
 }
+
+@Suppress("UnstableApiUsage")
 dependencyResolutionManagement {
   repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
   repositories {
@@ -16,3 +18,4 @@ dependencyResolutionManagement {
 rootProject.name = "Cocktails"
 include(":app")
 include(":rally")
+include(":todo")
