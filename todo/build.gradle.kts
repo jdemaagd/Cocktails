@@ -99,5 +99,5 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    implementation("androidx.test:core:1.5.0")
+    implementation(libs.androidx.core)
 }

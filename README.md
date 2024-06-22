@@ -16,6 +16,14 @@
 
 - `todo:dataBindingMergeDependencyArtifactsDebug`
 
+## Looper Error
+
+- Caused by: java.lang.RuntimeException:
+- Method getMainLooper in android.os.Looper not mocked.
+- See https://developer.android.com/r/studio-ui/build/not-mocked for details.
+- typically occurs when you try to execute code that relies on Android framework
+    - components like Looper
+
 ## Resources
 
 - [Testing Docs](https://developer.android.com/develop/ui/compose/testing#matchers)
