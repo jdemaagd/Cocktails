@@ -3,45 +3,40 @@ package com.kryptopass.test
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.ViewModelProvider
+import com.kryptopass.test.data.MovieApi
+import com.kryptopass.test.data.MovieRepository
+import com.kryptopass.test.ui.MovieListScreen
 import com.kryptopass.test.ui.theme.TestTheme
+import com.kryptopass.test.viewmodel.MovieViewModel
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
-            TestTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+
+            val repository = MovieRepository(Api.movieApi, BuildConfig.TMDB_API_KEY)
+            val viewModel = ViewModelProvider(this, object : ViewModelProvider.Factory {
+                @Suppress("UNCHECKED_CAST")
+                override fun <T : androidx.lifecycle.ViewModel> create(modelClass: Class<T>): T {
+                    return MovieViewModel(repository) as T
                 }
+            })[MovieViewModel::class.java]
+
+            TestTheme {
+                MovieListScreen(viewModel)
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+object Api {
+    private val retrofit = Retrofit.Builder()
+        .baseUrl(BuildConfig.TMDB_BASE_URL)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    TestTheme {
-        Greeting("Android")
-    }
+    val movieApi: MovieApi = retrofit.create(MovieApi::class.java)
 }

@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -18,6 +20,29 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        lateinit var properties: Properties
+        var tmdbApiKey = ""
+        var tmdbBaseUrl = ""
+        var tmdbImageUrl = ""
+
+        if (File("local.properties").exists()) {
+            properties =
+                Properties().apply {
+                    load(project.rootProject.file("local.properties").inputStream())
+                }
+            tmdbApiKey = properties.getProperty("TMDB_API_KEY")
+            tmdbBaseUrl = properties.getProperty("TMDB_BASE_URL")
+            tmdbImageUrl = properties.getProperty("TMDB_IMAGE_URL")
+        } else {
+            System.getenv("TMDB_API_KEY")
+            System.getenv("TMDB_BASE_URL")
+            System.getenv("TMDB_IMAGE_URL")
+        }
+
+        buildConfigField("String", "TMDB_API_KEY", "\"$tmdbApiKey\"")
+        buildConfigField("String", "TMDB_BASE_URL", "\"$tmdbBaseUrl\"")
+        buildConfigField("String", "TMDB_IMAGE_URL", "\"$tmdbImageUrl\"")
     }
 
     buildTypes {
@@ -37,6 +62,7 @@ android {
         jvmTarget = "17"
     }
     buildFeatures {
+        buildConfig = true
         compose = true
     }
     composeOptions {
@@ -60,7 +86,17 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
 
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.coil.compose)
+    implementation(libs.logging.interceptor)
+    implementation(libs.retrofit.converter.gson)
+    implementation(libs.retrofit)
+
     testImplementation(libs.junit)
+    testImplementation(libs.mockito.kotlin)
+    testImplementation(libs.mockk)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.robolectric)
 
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.espresso.core)
