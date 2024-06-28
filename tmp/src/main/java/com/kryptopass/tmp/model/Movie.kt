@@ -1,4 +1,4 @@
-package com.kryptopass.test.model
+package com.kryptopass.tmp.model
 
 import com.google.gson.annotations.SerializedName
 

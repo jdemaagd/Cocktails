@@ -1,14 +1,14 @@
-package com.kryptopass.test
+package com.kryptopass.tmp
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.lifecycle.ViewModelProvider
-import com.kryptopass.test.data.MovieApi
-import com.kryptopass.test.data.MovieRepository
-import com.kryptopass.test.ui.MovieListScreen
-import com.kryptopass.test.ui.theme.TestTheme
-import com.kryptopass.test.viewmodel.MovieViewModel
+import com.kryptopass.tmp.data.MovieApi
+import com.kryptopass.tmp.data.MovieRepository
+import com.kryptopass.tmp.ui.MovieListScreen
+import com.kryptopass.tmp.ui.theme.TestTheme
+import com.kryptopass.tmp.viewmodel.MovieViewModel
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

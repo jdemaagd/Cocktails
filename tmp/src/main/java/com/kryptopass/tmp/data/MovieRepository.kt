@@ -1,6 +1,6 @@
-package com.kryptopass.test.data
+package com.kryptopass.tmp.data
 
-import com.kryptopass.test.model.MovieResponse
+import com.kryptopass.tmp.model.MovieResponse
 
 class MovieRepository(
     private val movieApi: MovieApi,

@@ -1,4 +1,4 @@
-package com.kryptopass.test.ui
+package com.kryptopass.tmp.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Row
@@ -20,9 +20,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberAsyncImagePainter
-import com.kryptopass.test.BuildConfig
-import com.kryptopass.test.model.Movie
-import com.kryptopass.test.viewmodel.MovieViewModel
+import com.kryptopass.tmp.BuildConfig
+import com.kryptopass.tmp.model.Movie
+import com.kryptopass.tmp.viewmodel.MovieViewModel
 
 @Composable
 fun MovieListScreen(viewModel: MovieViewModel = viewModel()) {

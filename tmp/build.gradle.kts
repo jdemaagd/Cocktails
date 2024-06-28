@@ -2,15 +2,16 @@ import java.util.Properties
 
 plugins {
     alias(libs.plugins.androidApplication)
+    alias(libs.plugins.compose.compiler)
     alias(libs.plugins.jetbrainsKotlinAndroid)
 }
 
 android {
-    namespace = "com.kryptopass.test"
+    namespace = "com.kryptopass.tmp"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.kryptopass.test"
+        applicationId = "com.kryptopass.tmp"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -66,7 +67,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.11"
+        kotlinCompilerExtensionVersion = "1.5.14"
     }
     packaging {
         resources {

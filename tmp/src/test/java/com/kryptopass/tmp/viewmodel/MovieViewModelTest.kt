@@ -1,8 +1,8 @@
-package com.kryptopass.test.viewmodel
+package com.kryptopass.tmp.viewmodel
 
-import com.kryptopass.test.data.MovieRepository
-import com.kryptopass.test.model.Movie
-import com.kryptopass.test.model.MovieResponse
+import com.kryptopass.tmp.data.MovieRepository
+import com.kryptopass.tmp.model.Movie
+import com.kryptopass.tmp.model.MovieResponse
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.*

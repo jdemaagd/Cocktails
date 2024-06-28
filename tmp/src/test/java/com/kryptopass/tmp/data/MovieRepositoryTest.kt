@@ -1,7 +1,7 @@
-package com.kryptopass.test.data
+package com.kryptopass.tmp.data
 
-import com.kryptopass.test.BuildConfig
-import com.kryptopass.test.model.MovieResponse
+import com.kryptopass.tmp.BuildConfig
+import com.kryptopass.tmp.model.MovieResponse
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.runBlocking
